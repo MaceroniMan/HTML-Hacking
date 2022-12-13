@@ -1,0 +1,37 @@
+<title>Hacksters - Challenge Four</title>
+<link rel="stylesheet" href="/static/css/main.css">
+<!-- this script element is not important for this lesson-->
+<script src="/static/js/cookies.js"></script>
+
+<body>   
+  <!-- the body is not important for this lesson-->
+  <h2>Hacksters - Challenge Four - Cookies</h2><br>
+  <div class="login">
+    <label><b>User Name</b></label><br><br>
+    <input type="text" name="Uname" id="username" placeholder="username">
+    <br><br>
+    <label><b>Password</b></label><br><br>
+    <input type="password" name="Pass" id="password" placeholder="password">
+    <br><br>
+    <button id="log" onclick="login()">Log In</button>
+    <br><br>
+    <button id="log" onclick="window.location.href='/beginner'">Back</button>
+  </div>
+</body>
+
+<script>
+  function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    var cookieusername = getCookie("C4-username")
+    var cookiepassword = getCookie("C4-password")
+
+    if (username == cookieusername && password == cookiepassword) {
+      alert("Correct! Now on to Challenge Five!")
+      window.location.href = "/beginner/challenge-five"
+    } else {
+      alert("Incorrect username or password")
+    }
+  }
+</script>

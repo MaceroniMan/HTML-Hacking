@@ -1,0 +1,35 @@
+<title>Hacksters - Challenge Five</title>
+<link rel="stylesheet" href="/static/css/main.css">
+<script src="/static/js/md5.js"></script>
+
+<body>   
+  <!-- the body is not important for this lesson-->
+  <h2>Hacksters - Challenge Five - MD5</h2><br>
+  <div class="login">
+    <label><b>User Name</b></label><br><br>
+    <input type="text" name="Uname" id="username" placeholder="username">
+    <br><br>
+    <label><b>Password</b></label><br><br>
+    <input type="password" name="Pass" id="password" placeholder="password">
+    <br><br>
+    <button id="log" onclick="login()">Log In</button>
+    <br><br>
+    <button id="log" onclick="window.location.href='/beginner'">Back</button>
+  </div>
+</body>
+
+<script>
+  function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    password = md5(password)
+
+    if (username == "username3" && password == "50c68b44520462e62943be5e0990ea21") {
+      alert("Correct! You have hacked your way through all the challenges!")
+      window.location.href = "/beginner"
+    } else {
+      alert("Incorrect username or password")
+    }
+  }
+</script>
